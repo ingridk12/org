@@ -14,8 +14,8 @@ function App() {
   //Lista de equipo
   const equipos = [
     {
-      titulo: "Programacion",
-      colorPrimario: "#57C278 ",
+      titulo: "Programación",
+      colorPrimario: "#57C278",
       colorSecundario: "#D9F7E9",
     },
     {
@@ -34,17 +34,17 @@ function App() {
       colorSecundario: "#FDE7E8",
     },
     {
-      titulo: "Ux y Diseño",
+      titulo: "UX y Diseño",
       colorPrimario: "#DB6EBF",
       colorSecundario: "#FAE9F5",
     },
     {
-      titulo: "Movil",
+      titulo: "Móvil",
       colorPrimario: "#FFBA05",
       colorSecundario: "#FFF5D9",
     },
     {
-      titulo: "Invonacion y gestion",
+      titulo: "Innovación y Gestión",
       colorPrimario: "#FF8A29",
       colorSecundario: "#FFEEDF",
     },
@@ -53,7 +53,11 @@ function App() {
   return (
     <div>
       <Header />
-      {mostrarFormulario === true ? <Formulario /> : <div></div>}
+      {mostrarFormulario === true ? (
+        <Formulario equipos={equipos.map((equipo) => equipo.titulo)} />
+      ) : (
+        <div></div>
+      )}
 
       <MiOrg cambiarMostrar={cambiarMostrar} />
       {equipos.map((equipo) => {
